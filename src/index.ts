@@ -1,3 +1,4 @@
+import type { JSONSchema7 } from 'json-schema'
 import { createEvaluatedNode, defaultParser, parseport } from 'parseport'
 import type { Project, SourceFile } from 'ts-morph'
 import type { VueProjectOptions, VueSFCFileGenerationOptions } from './project'
@@ -42,16 +43,16 @@ export interface GetJSONSchemaFromExportedVueSFCOptions extends VueProjectOption
 export async function getJSONSchemaFromExportedVueSFC(
   entry: string,
   options: GetJSONSchemaFromExportedVueSFCOptions,
-) {
+): Promise<JSONSchema7> {
   const { meta } = options
   const components = await getExportedVueSFCComponents(entry, meta)
   const { project, language } = await createVueProject(options)
   await addVueSFCFiles(project, language, components.map(({ file }) => file), options)
   return {
-    schema: 'https://json-schema.org/draft-07/schema#',
+    $schema: 'https://json-schema.org/draft-07/schema#',
     definitions: Object.fromEntries(components.map(({ name, file }) => {
       const schema = getJSONSchemaFromVueSFC(project, file, options)
       return [name, schema]
-    })),
+    }).filter(([name, schema]) => schema !== undefined)),
   }
 }

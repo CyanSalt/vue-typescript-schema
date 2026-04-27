@@ -40,7 +40,6 @@
     "@cyansalt/eslint-config": "^4.6.0",
     "@cyansalt/tsconfig": "^3.0.2",
     "@release-it/conventional-changelog": "^11.0.0",
-    "@types/json-schema": "^7.0.15",
     "@types/node": "^22",
     "eslint": "^10.2.1",
     "release-it": "^20.0.1",
@@ -49,6 +48,7 @@
     "vitest": "^4.1.5"
   },
   "dependencies": {
+    "@types/json-schema": "^7.0.15",
     "@vue/language-core": "^3.2.7",
     "comment-parser": "^1.4.6",
     "parseport": "^0.1.2",
