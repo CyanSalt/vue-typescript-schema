@@ -1,0 +1,244 @@
+{
+  "definitions": {
+    "Bar": {
+      "additionalProperties": false,
+      "description": "Props",
+      "properties": {
+        "propImplicitEnum": {
+          "description": "EImplicitEnum",
+          "enum": [
+            0,
+            1,
+          ],
+        },
+        "propInterface": {
+          "additionalProperties": false,
+          "description": "IInterface",
+          "properties": {
+            "interfaceOptionalProperty": {
+              "type": "boolean",
+            },
+            "interfaceProperty": {
+              "type": "string",
+            },
+          },
+          "required": [
+            "interfaceProperty",
+          ],
+          "type": "object",
+        },
+        "propNested": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string",
+              },
+              {
+                "type": "number",
+              },
+            ],
+            "description": "TUnion",
+          },
+          "type": "object",
+        },
+        "propStringEnum": {
+          "description": "EStringEnum",
+          "enum": [
+            "Value1",
+            "Value2",
+          ],
+        },
+        "propUnion": {
+          "anyOf": [
+            {
+              "type": "string",
+            },
+            {
+              "type": "number",
+            },
+          ],
+          "description": "TUnion",
+        },
+      },
+      "required": [
+        "propUnion",
+        "propInterface",
+        "propStringEnum",
+        "propImplicitEnum",
+        "propNested",
+      ],
+      "type": "object",
+    },
+    "Foo": {
+      "additionalProperties": false,
+      "properties": {
+        "propAny": {},
+        "propArray": {
+          "items": {
+            "type": "string",
+          },
+          "type": "array",
+        },
+        "propBoolean": {
+          "type": "boolean",
+        },
+        "propBooleanLiteral": {
+          "const": undefined,
+        },
+        "propGetter": {
+          "type": "string",
+        },
+        "propIntersection": {
+          "allOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "propIntersectionAProperty": {
+                  "type": "string",
+                },
+              },
+              "required": [
+                "propIntersectionAProperty",
+              ],
+              "type": "object",
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "propIntersectionBProperty": {
+                  "type": "number",
+                },
+              },
+              "required": [
+                "propIntersectionBProperty",
+              ],
+              "type": "object",
+            },
+          ],
+        },
+        "propNever": false,
+        "propNull": {
+          "type": "null",
+        },
+        "propNumber": {
+          "type": "number",
+        },
+        "propNumberLiteral": {
+          "const": 42,
+        },
+        "propObject": {
+          "additionalProperties": {
+            "type": "string",
+          },
+          "properties": {
+            "propObjectStringProperty": {
+              "const": "hello",
+            },
+          },
+          "required": [
+            "propObjectStringProperty",
+          ],
+          "type": "object",
+        },
+        "propOptional": {
+          "type": "boolean",
+        },
+        "propReadOnly": {
+          "type": "number",
+        },
+        "propRecord": {
+          "additionalProperties": {
+            "type": "number",
+          },
+          "type": "object",
+        },
+        "propString": {
+          "type": "string",
+        },
+        "propStringLiteral": {
+          "const": "hello",
+        },
+        "propUndefined": {
+          "type": "null",
+        },
+        "propUnion": {
+          "anyOf": [
+            {
+              "type": "string",
+            },
+            {
+              "type": "number",
+            },
+          ],
+        },
+        "propUnionIntersection": {
+          "anyOf": [
+            {
+              "type": "boolean",
+            },
+            {
+              "allOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "propUnionIntersectionAProperty": {
+                      "type": "string",
+                    },
+                  },
+                  "required": [
+                    "propUnionIntersectionAProperty",
+                  ],
+                  "type": "object",
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "propUnionIntersectionBProperty": {
+                      "type": "number",
+                    },
+                  },
+                  "required": [
+                    "propUnionIntersectionBProperty",
+                  ],
+                  "type": "object",
+                },
+              ],
+            },
+          ],
+        },
+        "propUnknown": true,
+        "propWithComment": {
+          "default": "hello",
+          "description": "This is a string.
+Greet users pleasantly
+- Express sincerity
+- Use elegant language",
+          "type": "string",
+        },
+      },
+      "required": [
+        "propAny",
+        "propUnknown",
+        "propNever",
+        "propNull",
+        "propUndefined",
+        "propBoolean",
+        "propString",
+        "propNumber",
+        "propBooleanLiteral",
+        "propStringLiteral",
+        "propNumberLiteral",
+        "propArray",
+        "propObject",
+        "propGetter",
+        "propReadOnly",
+        "propUnion",
+        "propIntersection",
+        "propUnionIntersection",
+        "propRecord",
+      ],
+      "type": "object",
+    },
+  },
+  "schema": "https://json-schema.org/draft-07/schema#",
+}

@@ -1,0 +1,6 @@
+{
+  "extends": "@cyansalt/tsconfig",
+  "include": [
+    "src"
+  ]
+}

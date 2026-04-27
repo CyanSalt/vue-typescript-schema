@@ -1,0 +1,60 @@
+{
+  "name": "vue-typescript-schema",
+  "version": "0.1.0-0",
+  "description": "Generate JSON schema from Vue SFC with type annotations",
+  "type": "module",
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint": "eslint --fix './**/*.{js,ts}'",
+    "prepack": "tsdown",
+    "release": "release-it",
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CyanSalt/vue-typescript-schema.git"
+  },
+  "keywords": [
+    "vue",
+    "typescript",
+    "jsonschema"
+  ],
+  "author": "CyanSalt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CyanSalt/vue-typescript-schema/issues"
+  },
+  "homepage": "https://github.com/CyanSalt/vue-typescript-schema#readme",
+  "devDependencies": {
+    "@cyansalt/eslint-config": "^4.6.0",
+    "@cyansalt/tsconfig": "^3.0.2",
+    "@release-it/conventional-changelog": "^11.0.0",
+    "@types/json-schema": "^7.0.15",
+    "@types/node": "^22",
+    "eslint": "^10.2.1",
+    "release-it": "^20.0.1",
+    "tsdown": "^0.21.10",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.5"
+  },
+  "dependencies": {
+    "@vue/language-core": "^3.2.7",
+    "comment-parser": "^1.4.6",
+    "parseport": "^0.1.2",
+    "ts-morph": "^28.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "*"
+  }
+}
