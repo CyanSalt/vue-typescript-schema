@@ -1,6 +1,6 @@
 {
   "name": "vue-typescript-schema",
-  "version": "0.1.0-0",
+  "version": "0.1.0",
   "description": "Generate JSON schema from Vue SFC with type annotations",
   "type": "module",
   "main": "./dist/index.mjs",
