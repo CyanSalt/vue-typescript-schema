@@ -17,6 +17,7 @@
   ],
   "scripts": {
     "lint": "eslint --fix './**/*.{js,ts}'",
+    "lint:ci": "eslint --max-warnings 0 './**/*.{js,ts}'",
     "prepack": "tsdown",
     "release": "release-it",
     "test": "vitest"
